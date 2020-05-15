@@ -1,5 +1,17 @@
 import React, { Component } from "react";
 import "./App.css";
+
+//components
+import CharacterList from "./CharacterList";
+
+// Follow these steps to build app:
+// 1) set up "empty" reducer and initial state
+// 2) set up store and provider
+// 3) connect components
+// 4) add events and event handleers in UI
+// 5) build action creators
+// 5) write the reducer logic for actions
+
 class App extends Component {
   render() {
     return (
