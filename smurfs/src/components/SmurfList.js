@@ -12,7 +12,7 @@ const SmurfList = (props) => {
         <div>
             <SmurfsForm post ={props.postSmurf}/>
             {props.smurfs.map((item)) => (
-                <
+                <Smurfs 
             )}
         </div>
     )
