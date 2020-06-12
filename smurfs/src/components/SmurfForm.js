@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Axios from "axios";
 
-export const SmurfsForm = (props) => {
+export const SmurfForm = (props) => {
   const [smurf, setSmurf] = useState({
     //we are setting smurf to an empty object which will be the initial state
     name: "",
@@ -25,10 +25,12 @@ export const SmurfsForm = (props) => {
 
   return (
     <div>
-      <form onSubmit={handleChanges}>
+      <form onSubmit={handleSubmit}>
         <input type="text" value={name} name="name" onChange={handleChanges} />
         <button type="submit">BUTTON</button>
       </form>
     </div>
   );
 };
+
+export default SmurfForm;
