@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Axios from "axios";
+import { connect } from "react-redux";
+import { newSmurf } from "../actions/actions";
 
-export const SmurfForm = (props) => {
+const SmurfForm = (props) => {
   const [smurf, setSmurf] = useState({
     //we are setting smurf to an empty object which will be the initial state
     name: "",
@@ -9,17 +10,17 @@ export const SmurfForm = (props) => {
     height: "",
   });
 
-  const handleSubmit = (e) => {
+  const submitHandler = (e) => {
     e.preventDefault(); //this will prevent the refresh on the page
+    props.addSmurf(newSmurf);
+    document.getElementById("smurfForm").reset();
+  };
 
-    Axios.post("http://localhost:3333/smurfs")
-      .then((res) => {})
-      .catch((err) => console.log(err.response));
+  const inputHandler = (e) => {
+    event.preventDefault();
     setSmurf({
-      //here we are setting the state to start off with an empty string
-      name: "",
-      age: "",
-      height: "",
+      ...smurf,
+      [e.target.name]: e.ta,
     });
   };
 
@@ -33,4 +34,4 @@ export const SmurfForm = (props) => {
   );
 };
 
-export default SmurfForm;
+export default connect(mapStateToProps, { newSmurf })(SmurfForm);
