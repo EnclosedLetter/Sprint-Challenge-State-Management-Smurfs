@@ -11,3 +11,5 @@ const SmurfCard = ({ smurf }) => {
 };
 
 export default SmurfCard;
+
+//done
